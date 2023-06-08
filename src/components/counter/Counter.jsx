@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "../button/Button";
 
 
 const Counter = () => {
@@ -7,9 +8,9 @@ const Counter = () => {
 	return (
 		<>
 		<h1>{counter}</h1>
-		<button onClick={()=>sumar(counter, setCounter)}>Sumar</button>
-		<button onClick={()=>reset(counter, setCounter)}>Reset</button>
-		<button onClick={()=>restar(counter,setCounter)}>Restar</button>
+		<Button text='sumar' action={()=>sumar(counter, setCounter)}/>
+		<Button text='restar' action={()=>restar(counter, setCounter)}/>
+		<Button text='reset' action={()=>reset(setCounter)}/>
 		</>
 	)
 };
@@ -20,7 +21,7 @@ const sumar = (counter, setCounter) =>{
 const restar = (counter, setCounter) =>{
 	setCounter(counter - 1)
 }
-const reset = (counter, setCounter) =>{
+const reset = (setCounter) =>{
 	setCounter(0)
 }
 
